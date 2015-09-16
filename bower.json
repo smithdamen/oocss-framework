@@ -1,0 +1,11 @@
+{
+  "name": "oocss-framework",
+  "version": "0.0.1",
+  "homepage": "https://github.com/smithdamen/oocss-framework",
+  "authors": [
+    "smithdamen <smith.damen@gmail.com>"
+  ],
+  "description": "work in progress responsive oocss framework for websites",
+  "main": "index.html",
+  "license": "MIT"
+}
