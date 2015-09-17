@@ -1,10 +1,10 @@
-# H1 OOCSS/Grid Framework
+# OOCSS/Grid Framework
 
-# H6 A fluid grid system for desktop and mobile devices with an object-oriented approach to CSS and HTML.HTML
+###### A fluid grid system for desktop and mobile devices with an object-oriented approach to CSS and HTML.HTML
 
 This grid is usable on any screen size by simply applying the appropriate classes where needed to apply the desired layout depending on the size of the screen your page is being viewed on. The grid is divided into 12 columns and the classes will tell the element how many columns to span in the layout. 
 
-# H5 Classes
+##### Classes
 
 ```HTML
 <div class="container">
@@ -47,14 +47,14 @@ This code block has 3 layouts. The section spans 4 columns on large screen sizes
 
 [Demo page](http://smithdamen.github.io/oocss-framework)
 
-# H5 TODO 
+##### TODO 
 
 * Add box css class as the default content object
 * Add stylings for sub-classes within the box object
-..* .box-header
-..* .box-feature
-..* .box-content
-..* .box-footer
+  * .box-header
+  * .box-feature
+  * .box-content
+  * .box-footer
 * Add responsive navigation bar object
 * Add responsive buttons
 * Add full-screen/full-width banner object
