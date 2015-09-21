@@ -17,6 +17,11 @@
 /************ TYPEFACES ************/
 
 
+/************ IMAGES ************/
+@banner-background: url('http://gdurl.com/w8ZWp');
+
+
+
 /************ FONT SIZES AND COLORS ************/
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
@@ -68,13 +73,26 @@ p {
 
 .navigation {
   
-  min-height: 50px;
+  width: 100%;
   border-radius: 0;
   vertical-align: middle;
+  display: inline-block;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   
-  .nav-logo {
-    float: right;
-    border: 0;
+  nav {
+    min-height: 50px;
+  }
+  
+  .navbar-brand {
+    
+    padding: 5px;
+    
+    .nav-logo {
+      float: right;
+      border: 0;
+    }
   }
   
   .nav-light {
@@ -87,7 +105,14 @@ p {
     color: @light-color;
   }
   
-  .nav-fixed {
+  .nav-fixed-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+  }
+  
+  .nav-fixed-left {
     position: fixed;
     top: 0;
     left: 0;
@@ -95,16 +120,27 @@ p {
   }
   
   .navbar-list {
-    list-style: none;
+    list-style-type: none;
+    position: relative;
+    margin: 0;
+    padding: 0;
     
     .navbar-item {
-      float: right;
+      display: inline-block;
+      *display: inline;
+      zoom: 1;
+      vertical-align: middle;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      height: 100%;
       
       .navbar-link {
-        display: inline-block;
+        display: block;
         position: relative;
         padding: 10px 15px;
         text-decoration: none;
+        cursor: pointer;
       }
     }
   }
@@ -132,18 +168,108 @@ p {
   }
 }
 
+.banner {
+  height: 100vh;
+  background: @banner-background;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+
+.banner-fullscreen {
+  .container, .container-fluid {
+    height: 100%;
+  }
+}
+
+.title-section {
+  
+  padding: 50px 0;
+  vertical-align: middle;
+  
+  h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+  }
+}
+
 .box {
   
   width: 100%;
+  overflow: hidden;
   
-  .box-header {
+  .box-content {
     
+    height: 100%;
+    
+    .box-header {
+    
+      width: 100%;
+      margin: 0;
+      padding: 10px 15px;
+    
+      h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+      }
+    }
+    
+    .box-body {
+      float: left;
+      padding: 0 15px;
+      text-align: justify;
+    }
   }
   
   .box-image {
     max-width: 100%;
     height: auto;
     display: block;
+  }
+    
+  .box-feature {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+    
+  .feat-top {
+    width: 100%;
+    
+    img {
+      width: 100%;
+      /* possible properties for max height */
+    }
+  }
+    
+  .feat-right {
+    width: 40%;
+    float: right;
+  }
+    
+  .feat-left {
+    width: 40%;
+    float: left;
+  }
+    
+  .cont-right {
+    float: right;
+    width: 60%;
+  }
+    
+  .cont-left {
+    float: left;
+    width: 60%;
+  }
+  
+  .cont-middle {
+    text-align: center;
+    
+    .box-body {
+      text-align: center;
+    }
+  }
+    
+  .box-form {
+    
   }
   
   .box-btn {
@@ -184,31 +310,23 @@ p {
         border: 1px solid @accent-color;
       }
     }
-    
-    .box-feature {
-      
-    }
-    
-    .feature-top {
-      
-    }
-    
-    .feature-right {
-      
-    }
-    
-    .feature-left {
-      
-    }
-    
-    .box-form {
-      
-    }
   }
 }
 
 .text-center {
   text-align: center;
+  
+  &:before {
+    content: " ";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+}
+
+.centered {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 
@@ -220,15 +338,27 @@ p {
 
 
 .navigation {
-  .navbar-link {
-    &:hover {
-      
+  
+  .nav-dark {
+    .navbar-link {
+      &:hover {
+        background-color: @dark-primary-color;
+      }
+      &:active {
+        background-color: @dark-primary-color;
+      }
     }
-    &:active {
-      
-    }
-    &:visited {
-      
+  }
+  
+  .nav-light {
+    .navbar-link {
+      &:hover {
+        
+      }
+      &:active {
+        
+        
+      }
     }
   }
 }
@@ -288,5 +418,45 @@ p {
         }
       }
     }
+  }
+}
+
+
+/*======================================================================
+
+                      RESPONSIVE MODULE PROPERTIES
+
+========================================================================*/
+
+@media screen and (min-width: 320px) {
+  
+  .text-center-xs {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  
+  .text-center-sm {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  
+  .text-center-md {
+    text-align: center;
+  }
+  
+}
+
+@media screen and (min-width: 1100px) {
+  
+  .feat-top-lg {
+    
+  }
+  
+  .text-center-lg {
+    text-align: center;
   }
 }
