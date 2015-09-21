@@ -10,7 +10,13 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "grunt-contrib-less": "^1.0.1"
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "jit-grunt": "^0.9.1",
+    "jshint-stylish": "latest"
   },
   "optionalDependencies": {},
   "engines": {

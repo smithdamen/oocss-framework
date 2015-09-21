@@ -1,21 +1,29 @@
 module.exports = function(grunt) {
-    // Project configuration.
-    grunt.initConfig({
-        less: {
-            dev: {
-                options: {
-                    paths: ["src/css"]
-                },
-                files: {
-                    "src/css/styles.css": "src/less/main.less"
-                }
-            }
-        }
-    });
-    // Load the plugin that provides the "less" task.
-    grunt.loadNpmTasks('grunt-contrib-less');
+  require('jit-grunt')(grunt);
 
-    // Default task(s).
-    grunt.registerTask('default', 'less');
-    
+  grunt.initConfig({
+    less: {
+      development: {
+        options: {
+          compress: true,
+          yuicompress: true,
+          optimization: 2
+        },
+        files: {
+          "src/css/main.css": "src/less/*.less" // destination file and source file
+        }
+      }
+    },
+    watch: {
+      styles: {
+        files: ['less/*.less'], // which files to watch
+        tasks: ['less'],
+        options: {
+          nospawn: true
+        }
+      }
+    }
+  });
+
+  grunt.registerTask('default', ['less', 'watch']);
 };
