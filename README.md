@@ -2,7 +2,7 @@
 
 ###### A fluid grid system for desktop and mobile devices with an object-oriented approach to CSS and HTML.HTML
 
-This grid is usable on any screen size by simply applying the appropriate classes where needed to apply the desired layout depending on the size of the screen your page is being viewed on. The grid is divided into 12 columns and the classes will tell the element how many columns to span in the layout. 
+This grid is usable on any screen size by simply applying the appropriate classes where needed to apply the desired layout depending on the size of the screen your page is being viewed on. The grid is divided into 12 columns and the classes will tell the element how many columns to span in the layout.
 
 ##### Classes
 
@@ -47,7 +47,7 @@ This code block has 3 layouts. The section spans 4 columns on large screen sizes
 
 [Demo page](http://smithdamen.github.io/oocss-framework)
 
-##### TODO 
+##### TODO
 
 * Add box css class as the default content object
 * Add stylings for sub-classes within the box object
