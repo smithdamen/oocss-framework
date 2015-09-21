@@ -9,7 +9,9 @@
     "url": "git://github.com/smithdamen/oocss-framework.git"
   },
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt-contrib-less": "^1.0.1"
+  },
   "optionalDependencies": {},
   "engines": {
     "node": "*"
