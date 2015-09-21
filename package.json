@@ -1,0 +1,25 @@
+{
+  "author": "Damen Smith <smith.damen@gmail.com>",
+  "name": "oocss-framework",
+  "description": "object-oriented css framework for web design",
+  "version": "0.0.1",
+  "homepage": "http://index.html",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/smithdamen/oocss-framework.git"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/smithdamen/oocss-framework/issues"
+  },
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC"
+}
