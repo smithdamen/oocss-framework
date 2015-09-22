@@ -1,0 +1,119 @@
+/*======================================================================
+
+                      MODULE STATES PROPERTIES
+
+========================================================================*/
+
+@import "modules";
+
+.navigation {
+  
+  .nav-dark {
+    .navbar-link {
+      &:hover {
+        background-color: @dark-primary-color;
+      }
+      &:active {
+        background-color: @dark-primary-color;
+      }
+    }
+  }
+  
+  .nav-light {
+    .navbar-link {
+      &:hover {
+        
+      }
+      &:active {
+        
+        
+      }
+    }
+  }
+}
+
+.box {
+  .box-link {
+    &:hover {
+      
+    }
+    &:active {
+      
+    }
+    &:visited {
+      
+    }
+  }
+    
+  .box-btn {
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.40;
+      -khtml-opacity: 0.40;
+      -moz-opacity: 0.40;
+    }
+  }
+      
+  .btn-primary, .btn-selected, a.btn-primary, a.btn-selected {
+    &:hover {
+      color: @light-color;
+      background-color: @primary-color;
+      border: 1px solid @primary-color;
+    }
+    
+    &:active, &:focus {
+      color: @accent-color;
+      background-color: @light-color;
+      border: 1px solid @accent-color;
+    }
+  }
+      
+  .btn-secondary, a.button-secondary {
+    &:hover, &:active, &:focus {
+      color: @light-color;
+      background-color: @accent-color;
+      border: 1px solid @accent-color;
+    }
+  }
+      
+  .btn-transparent-light {
+    &:hover, &:active, &:focus {
+      color: @primary-text-color;
+      background: @light-color;
+    }
+  }
+      
+  .btn-transparent-dark {
+    &:hover, &:active, &:focus {
+      color: @primary-color;
+      background: @accent-color;
+      border: 1px solid @primary-color;
+    }
+  }
+}
+
+.footer {
+  min-height: 50px;
+  text-align: center;
+  line-height: 50px;
+  
+  p {
+    font-size: 16px;
+  }
+}
+
+.footer-dark {
+  background-color: @primary-color;
+  
+  p {
+    color: @light-color;
+  }
+}
+
+.footer-light {
+  background-color: @light-color;
+  
+  p {
+    color: @primary-text-color;
+  }
+}

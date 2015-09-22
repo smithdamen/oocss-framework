@@ -1,76 +1,11 @@
 /*======================================================================
 
-                  COLORS, FONT SIZES, FONT FAMILIES
-
-========================================================================*/
-
-
-/************ COLOR SCHEME ************/
-@primary-color: #ff5722;
-@dark-primary-color: #e64a19;
-@light-color: #ffffff;
-@primary-text-color: #212121;
-@secondary-text-color: #727272;
-@divider-color: #b6b6b6;
-@accent-color: #607d8b;
-
-/************ TYPEFACES ************/
-
-
-/************ IMAGES ************/
-@banner-background: url('http://gdurl.com/w8ZWp');
-
-
-
-/************ FONT SIZES AND COLORS ************/
-h1, h2, h3, h4, h5, h6, p {
-  margin: 0;
-  z-index: 1;
-  color: @primary-text-color;
-}
-
-.primary-text {
-  color: @primary-text-color;
-}
-
-.secondary-text {
-  color: @secondary-text-color;
-}
-
-.colored-text {
-  color: @dark-primary-color;
-}
-h1 {
-  font-size: 5.7vw;
-}
-h2 {
-  font-size: 4.0vw;
-}
-h3 {
-  font-size: 3.75vw;
-}
-h4 {
-  font-size: 3.5vw;
-}
-h5 {
-  font-size: 3.25vw;
-}
-
-h6 {
-  font-size: 3.0vw;
-}
-p {
-  font-size: 14px;
-   
-}
-
-
-/*======================================================================
-
                       STYLES FOR MODULES USED
 
 ========================================================================*/
 
+@import "variables";
+@import "layout";
 
 .navigation {
   
@@ -98,12 +33,18 @@ p {
   
   .nav-light {
     background-color: @light-color;
-    color: @primary-text-color;
+    
+    .navbar-link {
+      color: @primary-text-color;
+    }
   }
   
   .nav-dark {
     background-color: @primary-color;
-    color: @light-color;
+    
+    .navbar-link {
+      color: @light-color;
+    }
   }
   
   .nav-fixed {
@@ -136,6 +77,7 @@ p {
         padding: 10px 15px;
         text-decoration: none;
         cursor: pointer;
+        margin-top: 2px;
       }
     }
   }
@@ -179,18 +121,22 @@ p {
 
 .title-section {
   
+  width: 50%;
   padding: 50px 0;
   vertical-align: middle;
   margin: 50px 0;
   
   h1, h2, h3, h4, h5, h6 {
-    text-transform: uppercase;
+    // text-transform: uppercase;
   }
+}
+
+.box, .box-content, .box-header, .box-body {
+  min-width: 100% !important;
 }
 
 .box {
   
-  width: 100%;
   overflow: hidden;
   
   .box-content {
@@ -199,7 +145,6 @@ p {
     
     .box-header {
     
-      width: 100%;
       margin: 0;
       padding: 10px 15px;
     
@@ -213,6 +158,10 @@ p {
       padding: 0 15px;
       text-align: justify;
     }
+  }
+  
+  .box-body {
+    min-width: 100%;
   }
   
   .box-image {
@@ -289,24 +238,35 @@ p {
     padding: 0.5em 1em;
     text-decoration: none;
     border-radius: 2px;
+  }
     
-    .btn-secondary, a.btn-secondary {
-      color: @light-color;
-      background-color: @accent-color;
-      border: 1px solid @accent-color;
+  .btn-primary, a.btn-primary {
+    color: @primary-color;
+    background-color: @light-color;
+    border: 1px solid @primary-color;
+  }
+    
+  .btn-secondary, a.btn-secondary {
+    color: @accent-color;
+    background-color: @light-color;
+    border: 1px solid @accent-color;
+  }
+    
+  .btn-transparent-light {
+    color: @light-color;
+    background: none;
+    border: 1px solid @light-color;
+  }
       
-      .btn-transparent-light {
-        color: @light-color;
-        background: none;
-        border: 1px solid @light-color;
-      }
-      
-      .btn-transparent-dark {
-        color: @accent-color;
-        background: none;
-        border: 1px solid @accent-color;
-      }
-    }
+  .btn-transparent-dark {
+    color: @accent-color;
+    background: none;
+    border: 1px solid @accent-color;
+  }
+
+  
+  .fa {
+    font-size: 150px;
   }
 }
 
@@ -330,97 +290,10 @@ p {
   vertical-align: middle;
 }
 
-
-/*======================================================================
-
-                      MODULE STATES PROPERTIES
-
-========================================================================*/
-
-
-.navigation {
-  
-  .nav-dark {
-    .navbar-link {
-      &:hover {
-        background-color: @dark-primary-color;
-      }
-      &:active {
-        background-color: @dark-primary-color;
-      }
-    }
-  }
-  
-  .nav-light {
-    .navbar-link {
-      &:hover {
-        
-      }
-      &:active {
-        
-        
-      }
-    }
-  }
+.light {
+  color: @light-color;
 }
 
-.box {
-  .box-link {
-    &:hover {
-      
-    }
-    &:active {
-      
-    }
-    &:visited {
-      
-    }
-    
-    .box-btn {
-      &:disabled {
-        cursor: not-allowed;
-        opacity: 0.40;
-        -khtml-opacity: 0.40;
-        -moz-opacity: 0.40;
-      }
-      
-      .btn-primary, .btn-selected, a.btn-primary, a.btn-selected {
-        color: @light-color;
-        background-color: @primary-color;
-        border: 1px solid @light-color;
-      
-        &:hover, &:active, &:focus {
-          color: @primary-color;
-          background-color: @light-color;
-          border: 1px solid @primary-color;
-        }
-      }
-      
-      .btn-secondary, a.button-secondary {
-        &:hover, &:active, &:focus {
-          color: @light-color;
-          background-color: @primary-color;
-          border: 1px solid @primary-color;
-        }
-      }
-      
-      .btn-transparent-light {
-        &:hover, &:active, &:focus {
-          color: @primary-text-color;
-          background: @light-color;
-        }
-      }
-      
-      .btn-transparent-dark {
-        &:hover, &:active, &:focus {
-          color: @primary-color;
-          background: @accent-color;
-          border: 1px solid @primary-color;
-        }
-      }
-    }
-  }
-}
 
 
 /*======================================================================
@@ -431,22 +304,148 @@ p {
 
 @media screen and (min-width: 320px) {
   
+  .feat-top-xs {
+    width: 100%;
+    
+    img {
+      width: 100%;
+      /* possible properties for max height */
+    }
+  }
+    
+  .feat-right-xs {
+    width: 40%;
+    float: right;
+  }
+    
+  .feat-left-xs {
+    width: 40%;
+    float: left;
+  }
+    
+  .cont-right-xs {
+    float: right;
+    width: 60%;
+  }
+    
+  .cont-left-xs {
+    float: left;
+    width: 60%;
+  }
+  
+  .cont-middle-xs {
+    width: 100%;
+    text-align: center;
+    
+    .box-body {
+      text-align: center;
+    }
+  }
+  
   .text-center-xs {
     text-align: center;
+  }
+  
+  .text-left-xs {
+    text-align: left;
   }
 }
 
 @media screen and (min-width: 480px) {
   
+  .feat-top-sm {
+    width: 100%;
+    
+    img {
+      width: 100%;
+      /* possible properties for max height */
+    }
+  }
+    
+  .feat-right-sm {
+    width: 40%;
+    float: right;
+  }
+    
+  .feat-left-sm {
+    width: 40%;
+    float: left;
+  }
+    
+  .cont-right-sm {
+    float: right;
+    width: 60%;
+  }
+    
+  .cont-left-sm {
+    float: left;
+    width: 60%;
+  }
+  
+  .cont-middle-sm {
+    width: 100%;
+    text-align: center;
+    
+    .box-body {
+      text-align: center;
+    }
+  }
+  
   .text-center-sm {
     text-align: center;
+  }
+  
+  .text-left-sm {
+    text-align: left;
   }
 }
 
 @media screen and (min-width: 768px) {
   
+  .feat-top-md {
+    width: 100%;
+    
+    img {
+      width: 100%;
+      /* possible properties for max height */
+    }
+  }
+    
+  .feat-right-md {
+    width: 40%;
+    float: right;
+  }
+    
+  .feat-left-md {
+    width: 40%;
+    float: left;
+  }
+    
+  .cont-right-md {
+    float: right;
+    width: 60%;
+  }
+    
+  .cont-left-md {
+    float: left;
+    width: 60%;
+  }
+  
+  .cont-middle-md {
+    width: 100%;
+    text-align: center;
+    
+    .box-body {
+      text-align: center;
+    }
+  }
+  
   .text-center-md {
     text-align: center;
+  }
+  
+  .text-left-md {
+    text-align: left;
   }
   
 }
@@ -454,10 +453,48 @@ p {
 @media screen and (min-width: 1100px) {
   
   .feat-top-lg {
+    width: 100%;
     
+    img {
+      width: 100%;
+      /* possible properties for max height */
+    }
+  }
+    
+  .feat-right-lg {
+    width: 40%;
+    float: right;
+  }
+    
+  .feat-left-lg {
+    width: 40%;
+    float: left;
+  }
+    
+  .cont-right-lg {
+    float: right;
+    width: 60%;
+  }
+    
+  .cont-left-lg {
+    float: left;
+    width: 60%;
+  }
+  
+  .cont-middle-lg {
+    width: 100%;
+    text-align: center;
+    
+    .box-body {
+      text-align: center;
+    }
   }
   
   .text-center-lg {
     text-align: center;
+  }
+  
+  .text-left-lg {
+    text-align: left;
   }
 }
